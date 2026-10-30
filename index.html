@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#176b45">
+
+  <title>CEMAL CEMIL SL | Toko Makanan Online</title>
+
+  <style>
+    /* ==============================
+       1. PENGATURAN DASAR
+    ============================== */
+    :root {
+      --green: #176b45;
+      --dark: #104b32;
+      --light: #edf6ef;
+      --ink: #202c25;
+      --muted: #68766d;
+      --white: #ffffff;
+      --gold: #f4c96b;
+      --border: #e5eee6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background-color: #f7faf7;
+      background-image:
+        linear-gradient(
+          rgba(247, 250, 247, 0.90),
+          rgba(247, 250, 247, 0.90)
+        ),
+        url("https://i.pinimg.com/736x/71/80/e8/7180e8335407c7faaec44b924aede881.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ==============================
+       2. HEADER DAN NAVIGASI
+    ============================== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      box-shadow: 0 2px 12px #0000000c;
+    }
+
+    .nav {
+      max-width: 1150px;
+      margin: auto;
+      padding: 17px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      color: var(--green);
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: #d99d25;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    /* ==============================
+       3. HERO / BERANDA
+    ============================== */
+    .hero {
+  width: 100%;
+  min-height: 300px;
+  padding: 55px 22px;
+
+  color: var(--white);
+  text-align: left;
+
+  background-image:
+    linear-gradient(
+      120deg,
+      rgba(25, 25, 25, 0.70),
+      rgba(45, 45, 45, 0.45)
+    ),
+    url("https://i.pinimg.com/736x/c4/2d/aa/c42daa7a8ac4745025049ea001a296b7.jpg");
+
+  /* GAMBAR MENGIKUTI LEBAR LAYAR */
+  background-size: cover;
+
+  /* POSISI GAMBAR DI TENGAH */
+  background-position: center;
+
+  /* GAMBAR TIDAK DIULANG */
+  background-repeat: no-repeat;
+}
+
+/* KONTEN HERO */
+.hero-inner {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 35px;
+}
+
+/* RESPONSIVE UNTUK HP */
+@media (max-width: 750px) {
+  .hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .hero-inner > div {
+    width: 550px;
+    flex-shrink: 0;
+  }
+
+  .hero h1 {
+    font-size: 54px;
+    width: 550px;
+  }
+
+  .hero p {
+    width: 550px;
+  }
+  
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      width: 100%;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+          /* Posisi tulisan tetap */
+      .hero-inner > div {
+      width: 550px;
+      max-width: 100%;
+      flex-shrink: 0;
+}
+
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .hero h1 {
+      font-size: 54px;
+       line-height: 1.12;
+       margin: 15px 0;
+    
+
+       width: 550px;
+       max-width: 100%;
+
+       /* WARNA JUDUL HERO */
+      .judul-kuning {
+  color: #f4c96b;
+      }
+
+      .judul-putih {
+        color: #ffffff;
+      }
+    }
+
+    .hero p {
+      width: 550px;
+       max-width: 100%;
+
+        color: #f6f6f0;
+        font-size: 15px;
+        line-height: 1.8;
+     }
+
+    .primary {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 13px 19px;
+      background: var(--gold);
+      color: var(--dark);
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .primary:hover {
+      background: #ffda83;
+      transform: translateY(-2px);
+    }
+
+    /* ==============================
+       4. BAGIAN MENU
+    ============================== */
+    main {
+      max-width: 1100px;
+      margin: 45px auto;
+      padding: 0 22px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 22px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 8px;
+      font-size: 29px;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .search {
+      width: 100%;
+      max-width: 270px;
+      padding: 12px 14px;
+      border: 1px solid #d9e4db;
+      border-radius: 10px;
+      outline-color: var(--green);
+      background: var(--white);
+    }
+
+    .search:focus {
+      border-color: var(--green);
+    }
+
+    /* ==============================
+       5. FILTER KATEGORI
+    ============================== */
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 25px;
+    }
+
+    .category {
+      padding: 10px 16px;
+      color: var(--green);
+      background: var(--white);
+      border: 1px solid #d9e5db;
+      border-radius: 30px;
+      transition: 0.2s;
+    }
+
+    .category:hover {
+      background: var(--light);
+    }
+
+    .category.active {
+      color: var(--white);
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    /* ==============================
+       6. KARTU PRODUK
+    ============================== */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 5px 20px #163d2110;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .product:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px #163d2120;
+    }
+
+    .product img {
+      width: 100%;
+      height: 205px;
+      object-fit: cover;
+      background: var(--light);
+    }
+
+    .product-info {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 17px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      color: var(--green);
+      background: var(--light);
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    .product h3 {
+      margin: 12px 0 8px;
+      font-size: 18px;
+    }
+
+    .product p {
+      min-height: 40px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .price {
+      margin-top: auto;
+      padding-top: 15px;
+      color: var(--green);
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .empty {
+      grid-column: 1 / -1;
+      padding: 35px 10px;
+      color: var(--muted);
+      background: var(--white);
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    /* ==============================
+       7. FOOTER
+       Background dan ukuran dipertahankan
+    ============================== */
+    footer {
+      margin-top: 30px;
+      padding: 18px 12px 12px;
+      color: var(--white);
+      text-align: center;
+      background-image:
+        linear-gradient(
+          rgba(25, 25, 25, 0.70),
+          rgba(45, 45, 45, 0.45)
+        ),
+        url("https://i.pinimg.com/736x/c4/2d/aa/c42daa7a8ac4745025049ea001a296b7.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    footer .logo {
+      margin-bottom: 6px;
+      color: var(--white);
+      font-size: 19px;
+      font-weight: 900;
+      letter-spacing: 0.3px;
+      line-height: 1.3;
+    }
+
+    footer .logo span {
+      color: var(--gold);
+    }
+
+    footer .footer-slogan {
+      margin: 5px 0;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    footer .footer-description {
+      margin: 7px auto 10px;
+      color: var(--light);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    footer .footer-divider {
+      width: 45px;
+      margin: 8px auto;
+      border: 0;
+      border-top: 1px solid var(--gold);
+    }
+
+    footer .copyright {
+      margin: 0;
+      color: #eeeeee;
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    /* ==============================
+       8. RESPONSIVE TABLET DAN HP
+    ============================== */
+    @media (max-width: 750px) {
+      .nav {
+        padding: 14px 16px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .hero {
+        padding: 40px 18px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      main {
+        margin-top: 35px;
+        padding: 0 16px;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .product img {
+        height: 145px;
+      }
+
+      .product-info {
+        padding: 12px;
+      }
+
+      .product h3 {
+        font-size: 15px;
+      }
+
+      .product p {
+        font-size: 12px;
+      }
+
+      .search {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .nav {
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .product img {
+        height: 210px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav">
+      <div class="logo">CEMAL CEMIL<span> SL</span></div>
+
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="#beranda">Beranda</a>
+        <a href="#menu">Menu Makanan</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BERANDA -->
+  <section class="hero" id="beranda">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">💰 Ngemil puas, harga terjangkau!</span>
+
+        <h1>
+           <span class="judul-kuning">Jauh dari rumah.</span><br>
+           <span class="judul-putih">Dekat dengan rasa favorit.</span>
+        </h1>
+
+        <p>
+          Cemilan renyah, mie instan kesayangan, sampai sambal
+          andalan. Pilihan teman ngemil di setiap waktu!
+        </p>
+
+        <button
+          class="primary"
+          type="button"
+          onclick="document.getElementById('menu').scrollIntoView({ behavior: 'smooth' })">
+          Lihat Menu →
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU MAKANAN -->
+  <main>
+    <section id="menu">
+
+      <div class="section-heading">
+        <div>
+          <h2>Menu Makanan</h2>
+          <p>Temukan makanan dan cemilan favoritmu.</p>
+        </div>
+
+        <input
+          class="search"
+          id="search"
+          type="search"
+          placeholder="Cari makanan..."
+          aria-label="Cari makanan">
+      </div>
+
+      <!-- FILTER KATEGORI -->
+      <div class="categories" id="categories">
+
+        <button
+          class="category active"
+          type="button"
+          data-category="Semua">
+          Semua
+        </button>
+
+        <button
+          class="category"
+          type="button"
+          data-category="Makanan Berat">
+          Mie
+        </button>
+
+        <button
+          class="category"
+          type="button"
+          data-category="Cemilan">
+          Cemilan Ringan
+        </button>
+
+        <button
+          class="category"
+          type="button"
+          data-category="Persausan">
+          Persausan
+        </button>
+
+      </div>
+
+      <!-- PRODUK OTOMATIS -->
+      <div class="products" id="products"></div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER: KATA-KATA DIKOSONGKAN -->
+  <footer>
+    <div class="logo"><span></span></div>
+    <p class="footer-slogan"></p>
+    <p class="footer-description"></p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    "use strict";
+
+    /* ==============================
+       1. DATA PRODUK
+    ============================== */
+
+    const produk = [
+      {
+        id: 1,
+        nama: "Indomie Ori",
+        kategori: "Makanan Berat",
+        harga: 700,
+        deskripsi: "Nikmatnya tidak ada tandingannya.",
+        gambar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Y4PLsc-Tlbp0jBhLQBv3IoG2xQHsOjUXI0eEVoj_iQ&s"
+      },
+      {
+        id: 2,
+        nama: "Indomie Goreng Rendang",
+        kategori: "Makanan Berat",
+        harga: 700,
+        deskripsi: "Pilihan rasa rendang yang gurih dan lezat.",
+        gambar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz4oUviDGoWCt9AE-QU2Ub5M7ZnaakMcMaeHk98rdYuJtWRlHL"
+      },
+      {
+        id: 3,
+        nama: "Indomie Kari Ayam",
+        kategori: "Makanan Berat",
+        harga: 700,
+        deskripsi: "Mie kuah dengan cita rasa kari yang gurih.",
+        gambar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShtuxoGUdbpfQXva0L6jq_ld-YjV16_H0y0Kw30zL6Dw&s=10"
+      },
+      {
+        id: 4,
+        nama: "Indomie Soto",
+        kategori: "Makanan Berat",
+        harga: 700,
+        deskripsi: "Mie kuah dengan rasa soto yang nikmat.",
+        gambar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjWK3mC2NA2WmF1TTlPX0BIZHLp64jDH_buD3ss1GSl8EbfmyhjwGKWmN-&s=10"
+      },
+      {
+        id: 5,
+        nama: "Makroni Ngehe",
+        kategori: "Cemilan",
+        harga: 1000,
+        deskripsi: "BALADO | KARI PEDAS | JAGUNG BAKAR | ASIN.",
+        gambar: "https://id-live-01.slatic.net/p/7aec07bf2b886f7b09cf9963c26ff2cd.jpg"
+      },
+      {
+        id: 6,
+        nama: "Usus Ngehe",
+        kategori: "Cemilan",
+        harga: 1200,
+        deskripsi: "BALADO | KARI PEDAS | JAGUNG BAKAR | ASIN.",
+        gambar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS81m8iCV-G5V4msab_bt8B4zpnK0Lgb7y58GtwZzWlszl7g_zJ9kZJjy8&s=10"
+      },
+      {
+        id: 7,
+        nama: "Saus ABC Extra Pedas 275ml",
+        kategori: "Persausan",
+        harga: 2120,
+        deskripsi: "Saus pedas untuk menambah cita rasa makanan.",
+        gambar: "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/catalog-image/97/MTA-179413404/br-m036969-04543_abc-sambal-extra-pedas-270ml_full01-2ac95dd6.jpg"
+      },
+      {
+        id: 8,
+        nama: "Saus Indofood Extra Pedas 275ml",
+        kategori: "Persausan",
+        harga: 2120,
+        deskripsi: "Saus ekstra pedas untuk pecinta makanan pedas.",
+        gambar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcI5dkOSSVJnVJSWGLi6VbcUB_ZBf-fLiqLkWOzs9h1YYIaFMVePUrptdB&s=10"
+      },
+      {
+        id: 9,
+        nama: "Sosis Kanzler",
+        kategori: "Cemilan",
+        harga: 1000,
+        deskripsi: "Harga murah, bikin kenyang.",
+        gambar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTYPFij5FAuB95SOtae91nSDLVF-1U3yvtktrW2VIRacCBR2bH22uzQ-fN&s=10"
+      },
+      {
+        id: 10,
+        nama: "Kecap Bango 135ml",
+        kategori: "Persausan",
+        harga: 1100,
+        deskripsi: "Makan lebih enak dengan Kecap Bango.",
+        gambar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU3x99yMyU933vKHNYOYn_KmD2ZMKbnYuI8lD7QrXpqQ&s"
+      },
+      {
+        id: 11,
+        nama: "Pop mie kuah dower",
+        kategori: "Makanan Berat",
+        harga: 1200,
+        deskripsi: "Mie enak dengan kuahnya yang pedas dan segar.",
+        gambar: "https://i.pinimg.com/736x/f3/5d/1c/f35d1c204b84e65b79a541813755ad8a.jpg"
+      },
+      {
+        id: 12,
+        nama: "Pop mie Soto Ayam",
+        kategori: "Makanan Berat",
+        harga: 1000,
+        deskripsi: "Dengan kuah soto yang lezat.",
+        gambar: "https://i.pinimg.com/736x/7c/ef/d7/7cefd75ac8ca940511a62dd6ab5f168b.jpg"
+      },
+      {
+        id: 14,
+        nama: "Pop mie Kari Ayam",
+        kategori: "Makanan Berat",
+        harga: 1000,
+        deskripsi: "Kuah kari yang lezat tidak ada tandingannya.",
+        gambar: "https://i.pinimg.com/736x/99/bb/1b/99bb1babf82cbb0e5e5bf87f90c9a4bd.jpg"
+      },
+      {
+        id: 15,
+        nama: "KERIPIK TEMPE",
+        kategori: "Cemilan",
+        harga: 2540,
+        deskripsi: "250g.",
+        gambar: "https://i.pinimg.com/736x/dd/5b/30/dd5b30ee0bac9c9bf5fc86d1446f7d35.jpg"
+      },
+      {
+        id: 16,
+        nama: "KERIPIK BAYAM",
+        kategori: "Cemilan",
+        harga: 2540,
+        deskripsi: "250g.",
+        gambar: "https://i.pinimg.com/736x/dd/f1/0e/ddf10edb7b061ebb2707439807493de3.jpg"
+      },
+      {
+        id: 17,
+        nama: "SINGKONG BALADO BASAH",
+        kategori: "Cemilan",
+        harga: 2400,
+        deskripsi: "250g.",
+        gambar: "https://i.pinimg.com/736x/e8/66/a7/e866a734d7f58c88d331b563945393d0.jpg"
+      },
+      {
+        id: 18,
+        nama: "BASRENG ASIN",
+        kategori: "Cemilan",
+        harga: 2100,
+        deskripsi: "250g.",
+        gambar: "https://i.pinimg.com/736x/d0/84/cf/d084cfd141575eb4057e39a5232aa1f9.jpg"
+      },
+      {
+        id: 19,
+        nama: "BASRENG PEDAS",
+        kategori: "Cemilan",
+        harga: 2100,
+        deskripsi: "250g.",
+        gambar: "https://i.pinimg.com/736x/99/4a/64/994a64d01979d5c3f83152832790fa7a.jpg"
+      },
+      {
+        id: 20,
+        nama: "KERUPUK SEBLAK KENCUR",
+        kategori: "Cemilan",
+        harga: 2460,
+        deskripsi: "250g.",
+        gambar: "https://i.pinimg.com/736x/fa/9b/d8/fa9bd8bc79aed15711d0593f62d50270.jpg"
+      },
+      {
+        id: 21,
+        nama: "SABENA STICK BALADO",
+        kategori: "Cemilan",
+        harga: 3000,
+        deskripsi: "Stick dengan rasa balado yang gurih.",
+        gambar: "https://i.pinimg.com/736x/77/a8/a9/77a8a94bf25ab855e10a224f4b1f607f.jpg"
+      },
+      {
+        id: 22,
+        nama: "EMPING MELINJO PEDAS",
+        kategori: "Cemilan",
+        harga: 2540,
+        deskripsi: "250g.",
+        gambar: "https://i.pinimg.com/736x/ca/92/ff/ca92ff23a69b083c326bb83725bf4af0.jpg"
+      },
+      {
+        id: 23,
+        nama: "KERUPUK KEMPLANG",
+        kategori: "Cemilan",
+        harga: 2540,
+        deskripsi: "250g.",
+        gambar: "https://i.pinimg.com/736x/51/f7/26/51f7268e579ef8b5f33f26a33a5fcc15.jpg"
+      },
+      {
+        id: 24,
+        nama: "KERIPIK UBI UNGU",
+        kategori: "Cemilan",
+        harga: 2300,
+        deskripsi: "250g.",
+        gambar: "https://i.pinimg.com/736x/0d/27/cc/0d27cce370ddd65eec6b1485662f85bf.jpg"
+      },
+      {
+        id: 25,
+        nama: "JAGUNG MARNING",
+        kategori: "Cemilan",
+        harga: 2300,
+        deskripsi: "250g.",
+        gambar: "https://i.pinimg.com/736x/fd/24/c7/fd24c7548779da8a3c65cd85ece111fe.jpg"
+      },
+      {
+        id: 26,
+        nama: "ROTI BAGELAN",
+        kategori: "Cemilan",
+        harga: 3000,
+        deskripsi: "KEJU | PANDA | ORIGINAL.",
+        gambar: "https://i.pinimg.com/736x/b5/8f/db/b58fdb17119aa03ca13f359d88be7512.jpg"
+      },
+      {
+        id: 27,
+        nama: "SAUS BELIBIS 235ml",
+        kategori: "Persausan",
+        harga: 2040,
+        deskripsi: "Dua pilihan rasa Belibis yang berbeda.",
+        gambar: "https://i.pinimg.com/736x/3f/9e/af/3f9eafae23daf158d4883dfc76cd70a8.jpg"
+      }
+    ];
+
+    /* ==============================
+       2. PENGATURAN KATEGORI
+    ============================== */
+
+    let kategoriAktif = "Semua";
+
+    /* ==============================
+       3. FORMAT HARGA LKR
+    ============================== */
+
+    function formatHarga(angka) {
+      return new Intl.NumberFormat("en-LK", {
+        style: "currency",
+        currency: "LKR",
+        maximumFractionDigits: 0
+      }).format(angka);
+    }
+
+    /* ==============================
+       4. MENAMPILKAN PRODUK
+    ============================== */
+
+    function tampilkanProduk() {
+      const wadah = document.getElementById("products");
+      const inputCari = document.getElementById("search");
+
+      const kata = inputCari.value.trim().toLowerCase();
+
+      const hasil = produk.filter((item) => {
+        const cocokKategori =
+          kategoriAktif === "Semua" ||
+          item.kategori === kategoriAktif;
+
+        const cocokKata =
+          item.nama.toLowerCase().includes(kata) ||
+          item.deskripsi.toLowerCase().includes(kata);
+
+        return cocokKategori && cocokKata;
+      });
+
+      if (hasil.length === 0) {
+        wadah.innerHTML = `
+          <div class="empty">
+            Makanan tidak ditemukan. Coba kata kunci lain.
+          </div>
+        `;
+        return;
+      }
+
+      wadah.innerHTML = hasil.map((item) => `
+        <article class="product">
+
+          <img
+            src="${item.gambar}"
+            alt="${item.nama}"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://placehold.co/600x400/eaf3eb/176b45?text=Gambar+Tidak+Tersedia'">
+
+          <div class="product-info">
+
+            <span class="tag">${item.kategori}</span>
+
+            <h3>${item.nama}</h3>
+
+            <p>${item.deskripsi}</p>
+
+            <span class="price">
+              ${formatHarga(item.harga)}
+            </span>
+
+          </div>
+        </article>
+      `).join("");
+    }
+
+    /* ==============================
+       5. FILTER KATEGORI
+    ============================== */
+
+    document
+      .getElementById("categories")
+      .addEventListener("click", (event) => {
+
+        const tombol = event.target.closest(
+          "button[data-category]"
+        );
+
+        if (!tombol) return;
+
+        kategoriAktif = tombol.dataset.category;
+
+        document.querySelectorAll(".category").forEach((item) => {
+          item.classList.toggle("active", item === tombol);
+        });
+
+        tampilkanProduk();
+      });
+
+    /* ==============================
+       6. PENCARIAN PRODUK
+    ============================== */
+
+    document
+      .getElementById("search")
+      .addEventListener("input", tampilkanProduk);
+
+    /* ==============================
+       7. TAMPILKAN PRODUK SAAT DIBUKA
+    ============================== */
+
+    tampilkanProduk();
+
+  </script>
+
+</body>
+</html>
